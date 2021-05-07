@@ -15,17 +15,14 @@
     <section>
         <div class="container">
             <div class="user signinBx">
-                <!-- <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div> -->
                 <div class="imgBx"><img src="./images/Croods User Interface.png" alt="" /></div>
                 <div class="formBx">
                     <form action="">
                         <h2>Sign In</h2>
                         <label for="userSIEmail">Email<span class="text-danger">*</span></label>
-                        <!-- <input type="email" name="" placeholder="mail@mail.com" /> -->
                         <input type="email" class="form-control" id="userSIEmail" onblur="checkUserSIEmail()" placeholder="mail@mail.com">
                         <small id="userSIEmailError" class="text-danger">Please check your login information.</small>
                         <label for="userSIPassword">Password<span class="text-danger">*</span></label>
-                        <!-- <input type="password" name="" placeholder="Password" /> -->
                         <input type="password" class="form-control" id="userSIPassword" onblur="checkUserSIPassword()" placeholder="password">
 
                         <small id="userSIPasswordError" class="text-danger">Please check your password.</small>
@@ -42,27 +39,21 @@
                     <form action="" onsubmit="return false;">
                         <h2>Create an account</h2>
                         <label for="userFullName">Name<span class="text-danger">*</span></label>
-                        <!-- <input type="text" name="" placeholder="Name" /> -->
                         <input type="text" class="form-control" id="userFullName" onblur="checkUserFullName()" placeholder="name">
                         <small id="userFullNameError" class="text-danger">This Field must be filled.</small>
                         <label for="userSIEmail">Email<span class="text-danger">*</span></label>
-                        <!-- <input type="email" name="" placeholder="mail@mail.com" /> -->
                         <input type="email" class="form-control" id="userEmail" onblur="checkUserEmail()" placeholder="mail@mail.com">
                         <small id="userEmailError" class="text-danger">Please check your email address.</small>
                         <label for="userPassword">Password<span class="text-danger">*</span></label>
-                        <!-- <input type="password" name="" placeholder="Create Password" /> -->
                         <input type="password" class="form-control" id="userPassword" onblur="checkUserPassword()" placeholder="**********">
                         <small id="userPasswordError" class="text-danger">Your password must be uppercase, lowercase and more than 10 characters.</small>
                         <input type="button" name="" value="Sign Up" onclick="signUp()" />
-                        <!-- <button type="button" class="btn btn-outline-primary text-uppercase mb-3" onclick="signUp()">Sign Up</button> -->
-
                         <p class="signup">
                             Already have an account ?
                             <a href="#" onclick="toggleForm();">Sign in.</a>
                         </p>
                     </form>
                 </div>
-                <!-- <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div> -->
                 <div class="imgBx"><img src="./images/Shiny Happy Abstract.png" alt="" /></div>
             </div>
         </div>
