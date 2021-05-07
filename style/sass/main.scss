@@ -242,12 +242,6 @@ input[type=number] {
 }
 
 .budget-container {
-    /* position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
     position: relative;
     background-color: $background-color;
 }
@@ -260,10 +254,6 @@ input[type=number] {
 .budget-container .app-title a {
     color: #FFF;
 }
-
-.budget-container .app-title a b {}
-
-.budget-header {}
 
 .budget-header .balance {
     margin-top: 45px;
@@ -378,13 +368,11 @@ input[type=number] {
 
 .budget-dashboard #all {
     min-width: 320px;
-    /* height: 339px; */
     position: relative;
 }
 
 .budget-dashboard #all ul {
     width: 320px;
-    /* height: 285px; */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -393,7 +381,6 @@ input[type=number] {
 }
 
 .budget-dashboard #all ul.list li {
-    /* position: relative; */
     font-size: 1em;
 }
 
@@ -428,10 +415,8 @@ input[type=number] {
     filter: invert(41%) sepia(94%) saturate(401%) hue-rotate(325deg) brightness(98%) contrast(90%);
 }
 
-.budget-dashboard #all ul.list li.income {}
-
 .budget-dashboard #all ul.list li.expense {
-    color: #5F1307;
+    color: $red-color;
 }
 
 
@@ -439,7 +424,6 @@ input[type=number] {
 
 .budget-dashboard #expense {
     min-width: 320px;
-    /* height: 339px; */
     position: relative;
 }
 
@@ -486,7 +470,6 @@ input[type=number] {
 
 .budget-dashboard #expense ul {
     width: 320px;
-    /* height: 285px; */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -542,7 +525,6 @@ input[type=number] {
 
 .budget-dashboard #income {
     min-width: 320px;
-    /* height: 339px; */
     position: relative;
 }
 
@@ -589,7 +571,6 @@ input[type=number] {
 
 .budget-dashboard #income ul {
     width: 320px;
-    /* height: 200px; */
     list-style: none;
     margin: 0;
     padding: 0;

@@ -232,12 +232,6 @@ input[type=number] {
 }
 
 .budget-container {
-  /* position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%); */
   position: relative;
   background-color: #c4c4c4;
 }
@@ -360,13 +354,11 @@ input[type=number] {
 /* ////////// ALL ///////////// */
 .budget-dashboard #all {
   min-width: 320px;
-  /* height: 339px; */
   position: relative;
 }
 
 .budget-dashboard #all ul {
   width: 320px;
-  /* height: 285px; */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -375,7 +367,6 @@ input[type=number] {
 }
 
 .budget-dashboard #all ul.list li {
-  /* position: relative; */
   font-size: 1em;
 }
 
@@ -416,7 +407,6 @@ input[type=number] {
 /* //////// EXPENSE ////////// */
 .budget-dashboard #expense {
   min-width: 320px;
-  /* height: 339px; */
   position: relative;
 }
 
@@ -463,7 +453,6 @@ input[type=number] {
 
 .budget-dashboard #expense ul {
   width: 320px;
-  /* height: 285px; */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -516,7 +505,6 @@ input[type=number] {
 /* /////// INCOME //////// */
 .budget-dashboard #income {
   min-width: 320px;
-  /* height: 339px; */
   position: relative;
 }
 
@@ -563,7 +551,6 @@ input[type=number] {
 
 .budget-dashboard #income ul {
   width: 320px;
-  /* height: 200px; */
   list-style: none;
   margin: 0;
   padding: 0;
