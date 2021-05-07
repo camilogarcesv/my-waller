@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/main.css">
+    <script src="./js/sweetalert2.js"></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>My Wallet</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="user signinBx">
+                <!-- <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div> -->
+                <div class="imgBx"><img src="./images/Croods User Interface.png" alt="" /></div>
+                <div class="formBx">
+                    <form action="">
+                        <h2>Sign In</h2>
+                        <label for="userSIEmail">Email<span class="text-danger">*</span></label>
+                        <!-- <input type="email" name="" placeholder="mail@mail.com" /> -->
+                        <input type="email" class="form-control" id="userSIEmail" onblur="checkUserSIEmail()" placeholder="mail@mail.com">
+                        <small id="userSIEmailError" class="text-danger">Please check your login information.</small>
+                        <label for="userSIPassword">Password<span class="text-danger">*</span></label>
+                        <!-- <input type="password" name="" placeholder="Password" /> -->
+                        <input type="password" class="form-control" id="userSIPassword" onblur="checkUserSIPassword()" placeholder="password">
+
+                        <small id="userSIPasswordError" class="text-danger">Please check your password.</small>
+                        <input onclick="signIn()" class="inp" type="button" name="" value="Login" />
+                        <p class="signup">
+                            Don't have an account?
+                            <a href="#" onclick="toggleForm();">Sign Up.</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="user signupBx">
+                <div class="formBx">
+                    <form action="" onsubmit="return false;">
+                        <h2>Create an account</h2>
+                        <label for="userFullName">Name<span class="text-danger">*</span></label>
+                        <!-- <input type="text" name="" placeholder="Name" /> -->
+                        <input type="text" class="form-control" id="userFullName" onblur="checkUserFullName()" placeholder="name">
+                        <small id="userFullNameError" class="text-danger">This Field must be filled.</small>
+                        <label for="userSIEmail">Email<span class="text-danger">*</span></label>
+                        <!-- <input type="email" name="" placeholder="mail@mail.com" /> -->
+                        <input type="email" class="form-control" id="userEmail" onblur="checkUserEmail()" placeholder="mail@mail.com">
+                        <small id="userEmailError" class="text-danger">Please check your email address.</small>
+                        <label for="userPassword">Password<span class="text-danger">*</span></label>
+                        <!-- <input type="password" name="" placeholder="Create Password" /> -->
+                        <input type="password" class="form-control" id="userPassword" onblur="checkUserPassword()" placeholder="**********">
+                        <small id="userPasswordError" class="text-danger">Your password must be uppercase, lowercase and more than 10 characters.</small>
+                        <input type="button" name="" value="Sign Up" onclick="signUp()" />
+                        <!-- <button type="button" class="btn btn-outline-primary text-uppercase mb-3" onclick="signUp()">Sign Up</button> -->
+
+                        <p class="signup">
+                            Already have an account ?
+                            <a href="#" onclick="toggleForm();">Sign in.</a>
+                        </p>
+                    </form>
+                </div>
+                <!-- <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div> -->
+                <div class="imgBx"><img src="./images/Shiny Happy Abstract.png" alt="" /></div>
+            </div>
+        </div>
+    </section>
+    <!-- Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-database.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
