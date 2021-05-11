@@ -37,6 +37,6 @@ function updateChart(income, outcome) {
 
     let ratio = income / (income + outcome);
 
-    drawCircle("#FFFFFF", -ratio, true);
-    drawCircle("#5F1307", 1 - ratio, false);
+    drawCircle("#08d46e", -ratio, true);
+    drawCircle("#ff2963", 1 - ratio, false);
 }

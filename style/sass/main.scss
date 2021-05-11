@@ -1,5 +1,5 @@
 // VARIABLES
-$background-color: #c4c4c4;
+$background-color: #fafafa;
 $primary-color: #243dc3;
 $red-color: #5F1307;
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
@@ -31,7 +31,9 @@ section .container {
     width: 800px;
     height: 500px;
     background: #fff;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -242,13 +244,17 @@ input[type=number] {
 }
 
 .budget-container {
-    position: relative;
     background-color: $background-color;
+    min-height: 100vh;
+    min-width: -webkit-fill-available;
+    display: inline-grid;
+    position: relative;
 }
 
 .budget-container .app-title {
     padding-top: 1rem;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .budget-container .app-title a {
@@ -256,7 +262,7 @@ input[type=number] {
 }
 
 .budget-header .balance {
-    margin-top: 45px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -273,7 +279,7 @@ input[type=number] {
 
 .budget-header .account {
     display: block;
-    width: 310px;
+    min-width: 320px;
     margin: 35px auto 0;
     line-height: 1.7em;
     text-align: center;
@@ -310,12 +316,16 @@ input[type=number] {
 /*/////////////   DASHBOARD    /////////////*/
 
 .budget-dashboard {
+    position: relative;
     display: block;
     width: 100%;
-    height: 100%;
-    background-color: #FFF;
+    min-height: inherit;
+    background-color: #fff;
     margin-top: 1rem;
     border-radius: 30px 30px 0 0;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .budget-dashboard .dash-title {
@@ -391,11 +401,10 @@ input[type=number] {
 }
 
 .budget-dashboard #all ul.list li .entry {
-    width: 250px;
+    width: auto;
     height: auto;
-    padding-left: 20px;
     margin-bottom: 10px;
-    ;
+    // padding-left: 20px;
     word-wrap: break-word;
 }
 
@@ -416,7 +425,34 @@ input[type=number] {
 }
 
 .budget-dashboard #all ul.list li.expense {
-    color: $red-color;
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+    word-wrap: break-word;
+}
+
+.budget-dashboard #all ul.list li.expense::before {
+    font-family: "FontAwesome";
+    color: #dc3545;
+    content: '\f309';
+    width: 20px;
+    height: 20px;
+}
+
+.budget-dashboard #all ul.list li.income {
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+    word-wrap: break-word;
+}
+
+.budget-dashboard #all ul.list li.income::before {
+    font-family: "FontAwesome";
+    color: #08d46e;
+    content: '\f30c';
+    width: 20px;
+    height: 20px;
+    vertical-align: text-top;
 }
 
 
@@ -433,6 +469,7 @@ input[type=number] {
     width: 100%;
     bottom: 0;
     border-top: 1px solid #ccc;
+    background-color: $background-color;
 }
 
 .budget-dashboard #expense .input * {
@@ -488,13 +525,19 @@ input[type=number] {
 }
 
 .budget-dashboard #expense ul.list li .entry {
-    width: 250px;
+    width: auto;
     height: auto;
     padding-left: 20px;
     margin-bottom: 10px;
-    ;
     word-wrap: break-word;
-    color: $red-color;
+}
+
+.budget-dashboard #expense ul.list li .entry:before {
+    font-family: "FontAwesome";
+    color: #dc3545;
+    content: '\f309';
+    width: 20px;
+    height: 20px;
 }
 
 .budget-dashboard #expense ul.list li #edit {
@@ -534,6 +577,7 @@ input[type=number] {
     width: 100%;
     bottom: 0;
     border-top: 1px solid #ccc;
+    background-color: $background-color;
 }
 
 .budget-dashboard #income .input * {
@@ -589,12 +633,19 @@ input[type=number] {
 }
 
 .budget-dashboard #income ul.list li .entry {
-    width: 250px;
+    width: auto;
     height: auto;
     padding-left: 20px;
     margin-bottom: 10px;
-    ;
     word-wrap: break-word;
+}
+
+.budget-dashboard #income ul.list li .entry::before {
+    font-family: "FontAwesome";
+    color: #08d46e;
+    content: '\f30c';
+    width: 20px;
+    height: 20px;
 }
 
 .budget-dashboard #income ul.list li #edit {
@@ -625,6 +676,6 @@ input[type=number] {
 
 .darkmode-layer,
 .darkmode-toggle {
-    z-index: 500;
-    top: 16px;
+    z-index: 1;
+    top: 10px;
 }

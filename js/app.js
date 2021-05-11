@@ -62,16 +62,16 @@ function checkUserPassword() {
 }
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 function signUp() {
-    var userFullName = document.getElementById("userFullName").value;
-    var userEmail = document.getElementById("userEmail").value;
-    var userPassword = document.getElementById("userPassword").value;
-    var userFullNameFormate = /^([A-Za-z.\s_-])/;
-    var userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
+    let userFullName = document.getElementById("userFullName").value;
+    let userEmail = document.getElementById("userEmail").value;
+    let userPassword = document.getElementById("userPassword").value;
+    let userFullNameFormate = /^([A-Za-z.\s_-])/;
+    let userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
 
-    var checkUserFullNameValid = userFullName.match(userFullNameFormate);
-    var checkUserEmailValid = userEmail.match(userEmailFormate);
-    var checkUserPasswordValid = userPassword.match(userPasswordFormate);
+    let checkUserFullNameValid = userFullName.match(userFullNameFormate);
+    let checkUserEmailValid = userEmail.match(userEmailFormate);
+    let checkUserPasswordValid = userPassword.match(userPasswordFormate);
 
     if (checkUserFullNameValid == null) {
         return checkUserFullName();
@@ -84,13 +84,13 @@ function signUp() {
             .auth()
             .createUserWithEmailAndPassword(userEmail, userPassword)
             .then((success) => {
-                var user = firebase.auth().currentUser;
-                var uid;
+                const user = firebase.auth().currentUser;
+                let uid;
                 if (user != null) {
                     uid = user.uid;
                 }
-                var firebaseRef = firebase.database().ref();
-                var userData = {
+                let firebaseRef = firebase.database().ref();
+                const userData = {
                     userFullName: userFullName,
                     userEmail: userEmail,
                     userPassword: userPassword,
@@ -102,13 +102,13 @@ function signUp() {
                 ).then((value) => {
                     setTimeout(function() {
                         window.location.replace("../budget.html");
-                    }, 1000);
+                    }, 500);
                 });
             })
             .catch((error) => {
                 // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
+                const errorCode = error.code;
+                const errorMessage = error.message;
                 swal({
                     type: "error",
                     title: "Error",
@@ -175,13 +175,13 @@ function signIn() {
                 }).then((value) => {
                     setTimeout(function() {
                         window.location.replace("../budget.html");
-                    }, 1000);
+                    }, 500);
                 });
             })
             .catch((error) => {
                 // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
+                const errorCode = error.code;
+                const errorMessage = error.message;
                 swal({
                     type: "error",
                     title: "Error",
@@ -192,6 +192,7 @@ function signIn() {
 }
 // xxxxxxxxxx Working For Profile Page xxxxxxxxxx
 // xxxxxxxxxx Get data from server and show in the page xxxxxxxxxx
+control = false;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         //   User is signed in.
@@ -202,16 +203,20 @@ firebase.auth().onAuthStateChanged((user) => {
         }
         let firebaseRefKey = firebase.database().ref().child(uid);
         firebaseRefKey.on("value", (dataSnapShot) => {
-            document.getElementById(
-                "userPfFullName"
-            ).innerHTML = dataSnapShot.val().userFullName;
-            // userEmail = dataSnapShot.val().userEmail;
-            // userPassword = dataSnapShot.val().userPassword;
+            document.getElementById("userPfFullName").innerHTML = getFirstWord(
+                dataSnapShot.val().userFullName
+            );
         });
     } else {
         //   No user is signed in.
+        console.log("entra");
     }
 });
+
+function getFirstWord(str) {
+    let spaceIndex = str.indexOf(" ");
+    return spaceIndex === -1 ? str : str.substr(0, spaceIndex);
+}
 
 // xxxxxxxxxx Working For Sign Out xxxxxxxxxx
 function signOut() {
@@ -226,7 +231,7 @@ function signOut() {
             }).then((value) => {
                 setTimeout(function() {
                     window.location.replace("../index.html");
-                }, 1000);
+                }, 500);
             });
         })
         .catch(function(error) {
@@ -245,33 +250,12 @@ const toggleForm = () => {
     container.classList.toggle("active");
 };
 
-/////////////////
-function onSuccess(googleUser) {
-    console.log("Logged in as: " + googleUser.getBasicProfile().getName());
-}
-
-function onFailure(error) {
-    console.log(error);
-}
-
-function renderButton() {
-    gapi.signin2.render("my-signin2", {
-        scope: "profile email",
-        width: 240,
-        height: 50,
-        longtitle: true,
-        theme: "dark",
-        onsuccess: onSuccess,
-        onfailure: onFailure,
-    });
-}
-
 //// DARK MODE CONFIG
 
 const options = {
     bottom: "32px", // default: '32px'
-    right: "32px", // default: '32px'
-    left: "unset", // default: 'unset'
+    right: "0px", // default: '32px'
+    left: "20px", // default: 'unset'
     time: "0.5s", // default: '0.3s'
     mixColor: "#fff", // default: '#fff'
     backgroundColor: "#fff", // default: '#fff'
@@ -280,7 +264,6 @@ const options = {
     saveInCookies: true, // default: true,
     label: "🌓", // default: ''
     autoMatchOsTheme: true, // default: true,
-    zIndex: "1",
 };
 
 const darkmode = new Darkmode(options);

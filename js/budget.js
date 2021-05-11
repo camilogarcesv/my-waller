@@ -131,6 +131,9 @@ function updateUI() {
     outcome = calculateTotal("expense", ENTRY_LIST);
     balance = Math.abs(calculateBalance(income, outcome));
 
+    arrowUp = '<i class="fa fa-long-arrow-up"></i>';
+    arrowDown = '<i class="fa fa-long-arrow-down"></i>';
+
     // DETERMINE SIGN OF BALANCE
     let sign = income >= outcome ? "$" : "-$";
 
@@ -142,6 +145,7 @@ function updateUI() {
     clearElement([expenseList, incomeList, allList]);
 
     ENTRY_LIST.forEach((entry, index) => {
+        // let arrow = entry.type ? arrowDown : arrowUp;
         if (entry.type == "expense") {
             showEntry(expenseList, entry.type, entry.title, entry.amount, index);
         } else if (entry.type == "income") {
@@ -155,10 +159,10 @@ function updateUI() {
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
-function showEntry(list, type, title, amount, id) {
+function showEntry(list, type, title, amount, id, arrow) {
     const entry = ` <li id = "${id}" class="${type}">
                         <div class="entry">${title}: $${amount}</div>
-                        <div id="edit"></i></div>
+                        <div id="edit"></div>
                         <div id="delete"></div>
                     </li>`;
 
