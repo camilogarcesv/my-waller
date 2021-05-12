@@ -1,7 +1,8 @@
 // VARIABLES
 $background-color: #fafafa;
 $primary-color: #243dc3;
-$red-color: #5F1307;
+$red-color: #dc3545;
+$green-color: #08d46e;
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
 * {
     margin: 0;
@@ -119,13 +120,13 @@ section .container .user .formBx form label {
 }
 
 section .container .user .formBx form label .text-danger {
-    color: #dc3545;
+    color: $red-color;
 }
 
 section .container .user .formBx form small {
     display: block;
-    margin-top: .25rem;
-    color: #dc3545;
+    margin: 0.1rem 0 0.25rem 0;
+    color: $red-color;
 }
 
 section .container .user .formBx form input[type='button'] {
@@ -208,7 +209,7 @@ section .container.active .signinBx .imgBx {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 380px) {
     section .container {
         max-width: 400px;
         height: 550px;
@@ -218,6 +219,18 @@ section .container.active .signinBx .imgBx {
     }
     section .container .user .formBx {
         width: 100%;
+    }
+    section .container .user .formBx form h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 991px) {
+    .budget-container {
+        font-size: 1.2rem;
+    }
+    .budget-header .account {
+        padding-bottom: 1rem;
     }
 }
 
@@ -274,7 +287,6 @@ input[type=number] {
 .budget-header .balance .value {
     color: #000;
     font-size: 2em;
-    margin-top: 10px;
 }
 
 .budget-header .account {
@@ -300,7 +312,7 @@ input[type=number] {
 }
 
 .budget-header .account .income .income-total {
-    color: #000;
+    color: $green-color;
 }
 
 .budget-header .account .outcome .title {
@@ -309,7 +321,7 @@ input[type=number] {
 }
 
 .budget-header .account .outcome .outcome-total {
-    color: #5F1307;
+    color: $red-color;
 }
 
 
@@ -433,7 +445,7 @@ input[type=number] {
 
 .budget-dashboard #all ul.list li.expense::before {
     font-family: "FontAwesome";
-    color: #dc3545;
+    color: $red-color;
     content: '\f309';
     width: 20px;
     height: 20px;
@@ -448,7 +460,7 @@ input[type=number] {
 
 .budget-dashboard #all ul.list li.income::before {
     font-family: "FontAwesome";
-    color: #08d46e;
+    color: $green-color;
     content: '\f30c';
     width: 20px;
     height: 20px;
@@ -642,7 +654,7 @@ input[type=number] {
 
 .budget-dashboard #income ul.list li .entry::before {
     font-family: "FontAwesome";
-    color: #08d46e;
+    color: $green-color;
     content: '\f30c';
     width: 20px;
     height: 20px;
