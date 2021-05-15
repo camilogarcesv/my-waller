@@ -4,8 +4,13 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "sass": "sass --watch ./style/sass/main.scss:./style/css/main.css"
+        "sass": "sass --watch ./style/sass/main.scss:./style/css/main.css",
+        "test": "jest --verbose",
+        "start": "live-server"
     },
     "author": "Juan Camilo Garces",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^26.6.3"
+    }
 }

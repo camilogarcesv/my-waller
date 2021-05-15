@@ -12,13 +12,12 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Full Name Validation xxxxxxxxxx
 function checkUserFullName() {
-    var userSurname = document.getElementById("userFullName").value;
-    var flag = false;
+    let userSurname = document.getElementById("userFullName").value;
+    let flag = false;
     if (userSurname === "") {
         flag = true;
     }
@@ -30,9 +29,10 @@ function checkUserFullName() {
 }
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail() {
-    var userEmail = document.getElementById("userEmail");
-    var userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var flag;
+    let userEmail = document.getElementById("userEmail");
+    let userEmailFormate =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let flag;
     if (userEmail.value.match(userEmailFormate)) {
         flag = false;
     } else {
@@ -46,9 +46,9 @@ function checkUserEmail() {
 }
 // xxxxxxxxxx Password Validation xxxxxxxxxx
 function checkUserPassword() {
-    var userPassword = document.getElementById("userPassword");
-    var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
-    var flag;
+    let userPassword = document.getElementById("userPassword");
+    let userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
+    let flag;
     if (userPassword.value.match(userPasswordFormate)) {
         flag = false;
     } else {
@@ -66,7 +66,8 @@ function signUp() {
     let userEmail = document.getElementById("userEmail").value;
     let userPassword = document.getElementById("userPassword").value;
     let userFullNameFormate = /^([A-Za-z.\s_-])/;
-    let userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let userEmailFormate =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
 
     let checkUserFullNameValid = userFullName.match(userFullNameFormate);
@@ -120,9 +121,10 @@ function signUp() {
 // xxxxxxxxxx Working For Sign In Form xxxxxxxxxx
 // xxxxxxxxxx Sign In Email Validation xxxxxxxxxx
 function checkUserSIEmail() {
-    var userSIEmail = document.getElementById("userSIEmail");
-    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var flag;
+    let userSIEmail = document.getElementById("userSIEmail");
+    let userSIEmailFormate =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let flag;
     if (userSIEmail.value.match(userSIEmailFormate)) {
         flag = false;
     } else {
@@ -136,9 +138,9 @@ function checkUserSIEmail() {
 }
 // xxxxxxxxxx Sign In Password Validation xxxxxxxxxx
 function checkUserSIPassword() {
-    var userSIPassword = document.getElementById("userSIPassword");
-    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
-    var flag;
+    let userSIPassword = document.getElementById("userSIPassword");
+    let userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
+    let flag;
     if (userSIPassword.value.match(userSIPasswordFormate)) {
         flag = false;
     } else {
@@ -152,13 +154,14 @@ function checkUserSIPassword() {
 }
 // xxxxxxxxxx Check email or password exsist in firebase authentication xxxxxxxxxx
 function signIn() {
-    var userSIEmail = document.getElementById("userSIEmail").value;
-    var userSIPassword = document.getElementById("userSIPassword").value;
-    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
+    let userSIEmail = document.getElementById("userSIEmail").value;
+    let userSIPassword = document.getElementById("userSIPassword").value;
+    let userSIEmailFormate =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
 
-    var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
+    let checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
+    let checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
 
     if (checkUserEmailValid == null) {
         return checkUserSIEmail();
@@ -265,6 +268,19 @@ const options = {
     label: "🌓", // default: ''
     autoMatchOsTheme: true, // default: true,
 };
-
+//istanbul ignore next
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
+
+///Export for testing
+function getFormElems() {
+    return [
+        document.getElementById("userSIEmail"),
+        document.getElementById("userSIPassword"),
+    ];
+}
+module.exports = {
+    getFormElems: getFormElems,
+    checkUserSIEmail: checkUserSIEmail,
+    checkUserSIPassword: checkUserSIPassword,
+};
