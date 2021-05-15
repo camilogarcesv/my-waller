@@ -44,7 +44,9 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 ## Demo
 
-URL: https://happy-yonath-a592cd.netlify.app/
+URL: [Deployed App](https://happy-yonath-a592cd.netlify.app/)
+
+Figma: [Figma Prototype](https://www.figma.com/proto/cSVAZorif9IUIDWR0TJ4iA/Untitled?node-id=1%3A2&scaling=scale-down&page-id=0%3A1)
 
 ## Screenshots
 
